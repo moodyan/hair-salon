@@ -55,9 +55,11 @@ _If you run into any issues or have questions, ideas or concerns, please contact
 
 ## Technologies Used
 
-_Languages: HTML, CSS, C#, SQL._
-_Frameworks: Nancy, .Net._
-_Testing: xUnit._
+_**Languages:** HTML, CSS, C#, SQL._
+
+_**Frameworks:** Nancy, .Net._
+
+_**Testing:** xUnit._
 
 ### License
 
