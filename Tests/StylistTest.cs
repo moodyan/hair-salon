@@ -100,7 +100,7 @@ namespace Salon
 
       Client testClient1 = new Client("Minnie Mouse", "some details", testStylist1.GetId());
       testClient1.Save();
-      Client testClient2 = new Client("Nein Germans", "here are some more details", testStylist2.GetId());
+      Client testClient2 = new Client("Darla Darling", "here are some more details", testStylist2.GetId());
       testClient2.Save();
 
       //Act

@@ -25,6 +25,19 @@ namespace Salon
         newStylist.Save();
         return View["success.cshtml"];
       };
+      Get["/clients"] = _ => {
+        List<Client> allClients = Client.GetAll();
+        return View["clients.cshtml", allClients];
+      };
+      Get["/clients/new"] = _ => {
+        List<Stylist> allStylists = Stylist.GetAll();
+        return View["client_add.cshtml", allStylists];
+      };
+      Post["/clients/new"] = _ => {
+        Client newClient = new Client(Request.Form["client-name"], Request.Form["client-details"], Request.Form["stylist-id"]);
+        newClient.Save();
+        return View["success.cshtml"];
+      };
     }
   }
 }
