@@ -52,6 +52,47 @@ namespace Salon
      Assert.Equal(testClient, foundClient);
    }
 
+   [Fact]
+   public void Test_Update_UpdatesClientDetailsInDatabase()
+   {
+     string clientName = "Minnie Mouse";
+     string details = "Getting married to Mickey Mouse, practice updo for wedding";
+     int stylistId = 1;
+     Client testClient = new Client(clientName, details, stylistId);
+     testClient.Save();
+     string newDetails = "Post wedding hair cut. Cut 5 inches off.";
+
+     testClient.UpdateDetails(newDetails);
+     string result = testClient.GetDetails();
+
+     Assert.Equal(newDetails, result);
+   }
+
+   [Fact]
+   public void Test_Delete_DeletesClientFromDatabase()
+   {
+     //Arrange
+     string clientName1 = "Beau Blue";
+     string specialty1 = "Trim";
+     int stylistId1 = 1;
+     Client testClient1 = new Client(clientName1, specialty1, stylistId1);
+     testClient1.Save();
+
+     string clientName2 = "Darla Darling";
+     string specialty2 = "Cut and color";
+     int stylistId2 = 1;
+     Client testClient2 = new Client(clientName2, specialty2, stylistId2);
+     testClient2.Save();
+
+     //Act
+     testClient1.Delete();
+     List<Client> resultClients = Client.GetAll();
+     List<Client> testClientList = new List<Client> {testClient2};
+
+     //Assert
+     Assert.Equal(testClientList, resultClients);
+   }
+
    public void Dispose()
    {
      Client.DeleteAll();
