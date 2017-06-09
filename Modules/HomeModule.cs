@@ -17,6 +17,14 @@ namespace Salon
         List<Stylist> allStylists = Stylist.GetAll();
         return View["stylists.cshtml", allStylists];
       };
+      Get["/stylists/new"] = _ => {
+        return View["stylist_add.cshtml"];
+      };
+      Post["/stylists/new"] = _ => {
+        Stylist newStylist = new Stylist(Request.Form["stylist-name"], Request.Form["stylist-specialty"]);
+        newStylist.Save();
+        return View["success.cshtml"];
+      };
     }
   }
 }

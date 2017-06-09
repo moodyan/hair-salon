@@ -1,0 +1,13 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h4>ADD A NEW STYLIST</h4>
+
+<form action="/stylists/new" method="post">
+  <label for="stylist-name">Stylist name</label>
+  <input id="stylist-name" name="stylist-name" type="text">
+  <label for="stylist-specialty">Stylist specialty</label>
+  <input id="stylist-specialty" name="stylist-specialty" type="text">
+  <button type="submit">Add</button>
+</form>
