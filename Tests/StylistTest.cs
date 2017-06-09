@@ -51,6 +51,23 @@ namespace Salon
       Assert.Equal(testStylist, foundStylist);
     }
 
+    [Fact] //Spec 4
+    public void Test_GetClients_RetrievesAllClientsForStylist()
+    {
+      Stylist testStylist = new Stylist("Emmylou Earnest", "Men's cuts and short hair styles.");
+      testStylist.Save();
+
+      Client firstClient = new Client("Darla Darling", "On her last visit (1/2/2013), we trimmed her hair and touched up her roots with dark drown.", testStylist.GetId());
+      firstClient.Save();
+      Client secondClient = new Client("Beau Blue", "On his last visit, we shaved his sides and trimmed the top.", testStylist.GetId());
+      secondClient.Save();
+
+      List<Client> testClientList = new List<Client> {firstClient, secondClient};
+      List<Client> resultClientList = testStylist.GetClients();
+
+      Assert.Equal(testClientList, resultClientList);
+    }
+
     public void Dispose()
     {
       Stylist.DeleteAll();
