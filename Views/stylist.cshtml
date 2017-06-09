@@ -21,26 +21,6 @@ else
   </ul>
 }
 
-@*<h4>Client Feedback:</h4>
-@if (Model["feedback"].Count == 0)
-{
-  <p>No Client Feedback</p>
-}
-else{
-  <ul>
-    @foreach (var feedback in @Model["feedbacks"])
-    {
-      <li><strong>@feedback.GetUserName() said:</strong>
-        <br>
-        "@feedback.GetComment()"
-        <br>
-        rating: @feedback.GetScore()
-      </li>
-    }
-  </ul>
-}
-}*@
-
-<h4><a href ="/clients/@Model["client"].GetId()/delete">Delete this stylist!</a></h4>
+<h4><a href ='/stylists/@Model["stylist"].GetId()/delete'>Delete this stylist!</a></h4>
 <h4><a href ="/clients/new">Add a new client!</a></h4>
 <h4><a href="/">Return home</a></h4>

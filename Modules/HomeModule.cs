@@ -56,6 +56,15 @@ namespace Salon
         // model.Add("stylist", clientStylist);
         return View["client.cshtml", model];
       };
+      Get["stylists/{id}/delete"] = parameters => {
+        Stylist selectedStylist = Stylist.Find(parameters.id);
+        return View["stylist_delete.cshtml", selectedStylist];
+      };
+      Delete["stylists/{id}/delete"] = parameters => {
+        Stylist selectedStylist = Stylist.Find(parameters.id);
+        selectedStylist.Delete();
+        return View["success.cshtml"];
+      };
     }
   }
 }
