@@ -52,7 +52,7 @@ namespace Salon
      Assert.Equal(testClient, foundClient);
    }
 
-   [Fact]
+   [Fact] //Spec 6
    public void Test_Update_UpdatesClientDetailsInDatabase()
    {
      string clientName = "Minnie Mouse";
@@ -68,7 +68,7 @@ namespace Salon
      Assert.Equal(newDetails, result);
    }
 
-   [Fact]
+   [Fact] //Spec 7
    public void Test_Delete_DeletesClientFromDatabase()
    {
      //Arrange
