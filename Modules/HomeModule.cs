@@ -51,7 +51,7 @@ namespace Salon
       Get["/clients/{id}"] = parameters => {
         Dictionary<string, object> model = new Dictionary<string, object>();
         var selectedClient = Client.Find(parameters.id);
-        // var clientStylist = selectedStylist.GetClients();
+        // var clientStylist = selectedClient.GetStylist();
         model.Add("client", selectedClient);
         // model.Add("stylist", clientStylist);
         return View["client.cshtml", model];
@@ -88,6 +88,15 @@ namespace Salon
       Delete["stylists/{id}/delete"] = parameters => {
         Stylist selectedStylist = Stylist.Find(parameters.id);
         selectedStylist.Delete();
+        return View["success.cshtml"];
+      };
+      Get["clients/{id}/delete"] = parameters => {
+        Client selectedClient = Client.Find(parameters.id);
+        return View["client_delete.cshtml", selectedClient];
+      };
+      Delete["clients/{id}/delete"] = parameters => {
+        Client selectedClient = Client.Find(parameters.id);
+        selectedClient.Delete();
         return View["success.cshtml"];
       };
     }
