@@ -165,6 +165,71 @@ namespace Salon.Objects
       return foundClient;
     }
 
+    public void UpdateClientName(string newClientName)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+      SqlCommand cmd = new SqlCommand("UPDATE clients SET client_name = @NewClientName OUTPUT INSERTED.client_name WHERE id = @ClientId;", conn);
+
+      SqlParameter newClientNameParameter = new SqlParameter();
+      newClientNameParameter.ParameterName = "@NewClientName";
+      newClientNameParameter.Value = newClientName;
+      cmd.Parameters.Add(newClientNameParameter);
+
+      SqlParameter clientIdParameter = new SqlParameter();
+      clientIdParameter.ParameterName = "@ClientId";
+      clientIdParameter.Value = this.GetId();
+      cmd.Parameters.Add(clientIdParameter);
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+      while(rdr.Read())
+      {
+        this._clientName = rdr.GetString(0);
+      }
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+
+      if (conn != null)
+      {
+        conn.Close();
+      }
+    }
+    public void UpdateDetails(string newDetails)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+      SqlCommand cmd = new SqlCommand("UPDATE clients SET details = @NewDetails OUTPUT INSERTED.details WHERE id = @ClientId;", conn);
+
+      SqlParameter newDetailsParameter = new SqlParameter();
+      newDetailsParameter.ParameterName = "@NewDetails";
+      newDetailsParameter.Value = newDetails;
+      cmd.Parameters.Add(newDetailsParameter);
+
+      SqlParameter clientIdParameter = new SqlParameter();
+      clientIdParameter.ParameterName = "@ClientId";
+      clientIdParameter.Value = this.GetId();
+      cmd.Parameters.Add(clientIdParameter);
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+      while(rdr.Read())
+      {
+        this._details = rdr.GetString(0);
+      }
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+
+      if (conn != null)
+      {
+        conn.Close();
+      }
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();
