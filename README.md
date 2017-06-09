@@ -1,4 +1,4 @@
-# _Hair Salon_
+ _Hair Salon_
 
 #### _App created for Epicodus Independent Project, C-Sharp - Week Three. Practice using SQL Database Basics. June 9, 2017_
 
@@ -55,9 +55,9 @@ _If you run into any issues or have questions, ideas or concerns, please contact
 
 ## Technologies Used
 
-_Languages: HTML, CSS, C#, SQL _
-_Frameworks: Nancy, .Net _
-_Testing: xUnit _
+_Languages: HTML, CSS, C#, SQL._
+_Frameworks: Nancy, .Net._
+_Testing: xUnit._
 
 ### License
 
