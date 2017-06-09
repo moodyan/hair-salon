@@ -40,7 +40,7 @@ namespace Salon
       Assert.Equal(testList, result);
     }
 
-    [Fact]
+    [Fact] //Spec 2
     public void Test_FindStylistInDatabase()
     {
       Stylist testStylist = new Stylist("Emmylou Earnest", "Men's cuts and short hair styles.");
@@ -54,6 +54,7 @@ namespace Salon
     public void Dispose()
     {
       Stylist.DeleteAll();
+      Client.DeleteAll();
     }
   }
 }
