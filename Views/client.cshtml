@@ -1,0 +1,15 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h3>@Model["client"].GetClientName()</h3>
+
+<p>Details: @Model["client"].GetDetails()</p>
+
+
+<h4><a href ="/clients/@Model["client"].GetId()/delete">Delete this client!</a></h4>
+
+<h4><a href ='/clients/@Model["client"].GetId()/edit'>Edit this client!</a></h4>
+
+<p><a href="/">RETURN HOME</a></p>
+<p><a href="/stylists">VIEW ALL STYLISTS</a></p>

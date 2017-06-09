@@ -25,6 +25,16 @@ namespace Salon
         newStylist.Save();
         return View["success.cshtml"];
       };
+      Get["/stylists/{id}"] = parameters => {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        var selectedStylist = Stylist.Find(parameters.id);
+        var stylistClients = selectedStylist.GetClients();
+        // var clientFeedback = selectedClient.GetFeedback();
+        model.Add("stylist", selectedStylist);
+        model.Add("clients", stylistClients);
+        // model.Add("feedback", clientFeedback);
+        return View["stylist.cshtml", model];
+      };
       Get["/clients"] = _ => {
         List<Client> allClients = Client.GetAll();
         return View["clients.cshtml", allClients];
@@ -37,6 +47,14 @@ namespace Salon
         Client newClient = new Client(Request.Form["client-name"], Request.Form["client-details"], Request.Form["stylist-id"]);
         newClient.Save();
         return View["success.cshtml"];
+      };
+      Get["/clients/{id}"] = parameters => {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        var selectedClient = Client.Find(parameters.id);
+        // var clientStylist = selectedStylist.GetClients();
+        model.Add("client", selectedClient);
+        // model.Add("stylist", clientStylist);
+        return View["client.cshtml", model];
       };
     }
   }
