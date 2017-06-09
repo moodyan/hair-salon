@@ -84,6 +84,22 @@ namespace Salon
       Assert.Equal(newClientName, result);
     }
 
+    [Fact]
+    public void Test_Update_UpdatesClientDetailsInDatabase()
+    {
+      string clientName = "Minnie Mouse";
+      string details = "Getting married to Mickey Mouse, practice updo for wedding";
+      int stylistId = 1;
+      Client testClient = new Client(clientName, details, stylistId);
+      testClient.Save();
+      string newDetails = "Post wedding hair cut. Cut 5 inches off.";
+
+      testClient.UpdateDetails(newDetails);
+      string result = testClient.GetDetails();
+
+      Assert.Equal(newDetails, result);
+    }
+
     public void Dispose()
     {
       Stylist.DeleteAll();
