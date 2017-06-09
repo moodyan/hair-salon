@@ -20,6 +20,15 @@ namespace Salon
       int result = Stylist.GetAll().Count;
       Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void Test_Equal_ReturnsTrueForSameName()
+    {
+      Stylist firstStylist = new Stylist("Betty Jean", "Long hair, ombre coloring");
+      Stylist secondStylist = new Stylist("Betty Jean", "Long hair, ombre coloring");
+      Assert.Equal(firstStylist, secondStylist);
+    }
+
     public void Dispose()
     {
       Stylist.DeleteAll();
