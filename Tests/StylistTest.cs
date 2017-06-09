@@ -40,6 +40,17 @@ namespace Salon
       Assert.Equal(testList, result);
     }
 
+    [Fact]
+    public void Test_FindStylistInDatabase()
+    {
+      Stylist testStylist = new Stylist("Emmylou Earnest", "Men's cuts and short hair styles.");
+      testStylist.Save();
+
+      Stylist foundStylist = Stylist.Find(testStylist.GetId());
+
+      Assert.Equal(testStylist, foundStylist);
+    }
+
     public void Dispose()
     {
       Stylist.DeleteAll();
