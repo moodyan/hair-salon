@@ -12,14 +12,14 @@ _A simple app that allows salon employees to add/view/delete stylists and add/vi
 
 | Description  | Input Example | Output Example |
 | ------------- | ------------- | ------------- |
-| The program allows users to view all stylists.  | --   | "Here is a list of all stylists."  |
-| The program allows users to click on each stylist and view their details and which clients belong to that stylist.  | --   | "Stylist: Betty Jean, Specialty: Long hair, ombre coloring." "Her Clients: Darla Darling, Minnie Moo."  |
-| The program allows users to click on each client and see details about that client.  | --   | "Client: Darla Darling. Her Stylist: Betty Jean. Details: On her last visit (1/2/2013), we trimmed her hair and touched up her roots with dark drown."  |
-| The program allows users to click on each client and see details about that client.  | --   | "Client: Darla Darling. Her Stylist: Betty Jean. Details: On her last visit (1/2/2013), we trimmed her hair and touched up her roots with dark drown."  |
-| The program allows employees to add a new stylist to the database.  | New Stylist Name: "Emmylou Earnest" Stylist specialty: "Men's cuts and short hair styles."  | "Success! You have added a new stylist."  |
-| The program allows employees to add a new client to a stylist in the database.  | New Client Name: "Beau Blue" Client details: "None."  | "Success! You have added a new client."  |
-| The program allows employees to update an existing client's name and/or details.  | Client's Name (if changed): "" Client details: "On last visit, Minnie went from long hair to a short bob with bangs."  | "Success! You have updated your client."  |
-| The program allows employees to delete an existing client from the database.  | "Delete?"  | "Success! You have deleted this client."  |
+| 1. The program allows users to view all stylists.  | --   | "Here is a list of all stylists."  |
+| 2. The program allows users to click on each stylist and view their details and which clients belong to that stylist.  | --   | "Stylist: Betty Jean, Specialty: Long hair, ombre coloring." "Her Clients: Darla Darling, Minnie Moo."  |
+| 3. The program allows users to click on each client and see details about that client.  | --   | "Client: Darla Darling. Her Stylist: Betty Jean. Details: On her last visit (1/2/2013), we trimmed her hair and touched up her roots with dark drown."  |
+| 4. The program allows users to click on each client and see details about that client.  | --   | "Client: Darla Darling. Her Stylist: Betty Jean. Details: On her last visit (1/2/2013), we trimmed her hair and touched up her roots with dark drown."  |
+| 5. The program allows employees to add a new stylist to the database.  | New Stylist Name: "Emmylou Earnest" Stylist specialty: "Men's cuts and short hair styles."  | "Success! You have added a new stylist."  |
+| 6. The program allows employees to add a new client to a stylist in the database.  | New Client Name: "Beau Blue" Client details: "None."  | "Success! You have added a new client."  |
+| 7. The program allows employees to update an existing client's name and/or details.  | Client's Name (if changed): "" Client details: "On last visit, Minnie went from long hair to a short bob with bangs."  | "Success! You have updated your client."  |
+| 8. The program allows employees to delete an existing client from the database.  | "Delete?"  | "Success! You have deleted this client."  |
 
 ## Setup/Installation Requirements
 
