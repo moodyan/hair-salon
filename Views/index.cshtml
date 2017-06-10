@@ -2,9 +2,12 @@
   Layout="Shared/_Layout.cshtml";
 }
 <center>
-<h3><a href="/stylists">VIEW ALL STYLISTS</a></h3>
-<h3><a href="/clients">VIEW ALL CLIENTS</a></h3>
-
-<h3><a href="/stylists/new">ADD A NEW STYLIST</a></h3>
-<h3><a href="/clients/new">ADD A NEW CLIENT</a></h3>
+<div class="row">
+  <div class="col-sm-12">
+    <a href="/stylists"><button class="homebtn" type="button" name="button">OUR STYLISTS</button></a>
+    <h3><a href="/stylists/new">ADD A NEW STYLIST</a></h3>
+    <br>
+    <a href="/clients"><button class="homebtn" type="button" name="button">OUR CLIENTS</button></a>
+    <h3><a href="/clients/new">ADD A NEW CLIENT</a></h3>
+  </div>
 </center>

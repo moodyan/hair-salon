@@ -3,7 +3,7 @@
 }
 
 <h1>@Model["stylist"].GetStylistName()</h1>
-<p>@Model["stylist"].GetSpecialty()</p>
+<p>SPECIALTY: @Model["stylist"].GetSpecialty()</p>
 
 <h3>@Model["stylist"].GetStylistName()'s Clients</h3>
 
@@ -21,6 +21,6 @@ else
   </ul>
 }
 
-<h4><a href ='/stylists/@Model["stylist"].GetId()/delete'>Delete this stylist!</a></h4>
-<h4><a href ="/clients/new">Add a new client!</a></h4>
-<h4><a href="/">Return home</a></h4>
+<h4><a href ='/stylists/@Model["stylist"].GetId()/delete'>DELETE THIS STYLIST</a></h4>
+<h4><a href ="/clients/new">ADD A NEW CLIENT</a></h4>
+<h4><a href="/">RETURN HOME</a></h4>

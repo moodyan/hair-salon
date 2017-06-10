@@ -3,19 +3,19 @@
 }
 
 <h3>Clients</h3>
-<ul>
+<dl>
   @if (Model.Count !=0)
   {
     @foreach(var clients in Model)
     {
-      <li><a href="/clients/@clients.GetId()">@clients.GetClientName()</a></li>
+      <dd><a href="/clients/@clients.GetId()">@clients.GetClientName()</a></dd>
     }
   }
   else
   {
-    <p>This stylist currently has no clients.</p>
+    <p>This salon currently has no clients.</p>
   }
-</ul>
+</dl>
 
 <h4><a href ="/clients/new">ADD A NEW CLIENT</a></h4>
-<h4><a href="/">Return home</a></h4>
+<h4><a href="/">RETURN HOME</a></h4>
