@@ -1,4 +1,4 @@
- _Hair Salon_
+# _Hair Salon_
 
 #### _App created for Epicodus Independent Project, C-Sharp - Week Three. Practice using SQL Database Basics. June 9, 2017_
 
