@@ -3,25 +3,32 @@
 }
 
 <h4>ADD A NEW CLIENT</h4>
-
-<form action="/clients/new" method="post" class="form-horizontal">
-  <label for="client-name">Client Name</label>
-  <br>
-  <input id="client-name" name="client-name" type="text">
-  <br>
-  <label for="client-details">Client details</label>
-  <br>
-  <textarea id="client-details" name="client-details" type="text" rows="3"></textarea>
-  <br>
-  <label for="stylist-id">Stylist</label>
-  <br>
-  <select name="stylist-id">
-    @foreach (var stylist in Model)
-    {
-      <option value="@stylist.GetId()">@stylist.GetStylistName()</option>
-    }
-  </select>
-  <br>
-  <br>
-  <button class="button" type="submit">Add</button>
-</form>
+@if (@Model.Count == 0)
+{
+  <p>There are no stylists to assign a client to. Please add a stylist before you add a client.</p>
+  <a href="/stylists/new">ADD A NEW STYLIST</a>
+}
+else
+{
+  <form action="/clients/new" method="post" class="form-horizontal">
+    <label for="client-name">Client Name</label>
+    <br>
+    <input id="client-name" name="client-name" type="text">
+    <br>
+    <label for="client-details">Client details</label>
+    <br>
+    <textarea id="client-details" name="client-details" type="text" rows="3"></textarea>
+    <br>
+    <label for="stylist-id">Stylist</label>
+    <br>
+    <select name="stylist-id">
+      @foreach (var stylist in Model)
+      {
+        <option value="@stylist.GetId()">@stylist.GetStylistName()</option>
+      }
+    </select>
+    <br>
+    <br>
+    <button class="button" type="submit">Add</button>
+  </form>
+}
