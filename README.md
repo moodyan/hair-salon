@@ -37,7 +37,11 @@ _**From GitHub: Download or clone project repository onto desktop from GitHub.**
 
 _In SQLCMD run: > CREATE DATABASE hair_salon; > GO > USE hair_salon; > GO_
 
-_In your preferred database management system (I use SSMS) and open the sqlscripts.sql file from the project folder. Run the execute command on the file. That should connect the database to the project tables._
+_In your preferred database management system (I use SSMS), open the band_tracker.sql file from the project folder. Run the execute command on the file. If this does not work, run the following command in SQLCMD:
+
+CREATE DATABASE hair_salon; GO USE hair_salon; GO CREATE TABLE clients (id INT IDENTITY(1,1), client_name VARCHAR(100), details VARCHAR(255), stylist_id INT); GO CREATE TABLE stylists (id INT IDENTITY(1,1), stylist_name VARCHAR(100), specialty VARCHAR(255)); GO_
+
+_To create test database, in your preferred database management system (I use SSMS) open the hair_salon_test.sql file from the project folder. Run the execute command on the file. If this does not work, back up and restore the database as a test database in your preferred database management system.
 
 _In PowerShell, cd into the project folder. Enter the command > **dnu restore**_
 
